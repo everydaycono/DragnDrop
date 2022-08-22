@@ -23,6 +23,7 @@ const listItmes=[] as HTMLLIElement[];
 let dragStartIndex;
 
 // Inser List Items into Dom
+// Inser List Items into Dom
 const createList=()=>{
     [...placesTovisitList]
         .map(a=>({value:a,sort:Math.random()}))  // make it random (shuffle)
