@@ -1,7 +1,7 @@
 ### Drag n Drop -ts
 
 - [X] insert List Items into DOM
-- [ ] Scramble List Items
+- [X] Scramble List Items
 - [ ] The CSS
 - [ ] Drag & Drop Functionality
 - [ ] Check Order

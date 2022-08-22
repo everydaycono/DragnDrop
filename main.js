@@ -30,7 +30,10 @@ var listItmes = [];
 var dragStartIndex;
 // Inser List Items into Dom
 var createList = function () {
-    __spreadArray([], placesTovisitList, true).map(function (person, index) {
+    __spreadArray([], placesTovisitList, true).map(function (a) { return ({ value: a, sort: Math.random() }); }) // make it random (shuffle)
+        .sort(function (a, b) { return a.sort - b.sort; }) // sort by sort(key | value)
+        .map(function (a) { return a.value; }) // remove sort and value 
+        .map(function (person, index) {
         var listItem = document.createElement('li');
         listItem.setAttribute('data-index', index.toString());
         listItem.innerHTML = "\n            <span class=\"number\" >".concat(index + 1, "</span>\n            <div class=\"draggable\" draggable=\"true\" >\n                <p class=\"person-name\" >").concat(person, "</p>\n                <i class=\"fas fa-grip-lines\" ></i>\n            </div>\n        ");

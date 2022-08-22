@@ -24,7 +24,11 @@ let dragStartIndex;
 
 // Inser List Items into Dom
 const createList=()=>{
-    [...placesTovisitList].map((person,index)=>{
+    [...placesTovisitList]
+        .map(a=>({value:a,sort:Math.random()}))  // make it random (shuffle)
+        .sort((a,b)=>a.sort - b.sort)  // sort by sort(key | value)
+        .map(a=>a.value) // remove sort and value 
+        .map((person,index)=>{
         const listItem = document.createElement('li');
 
         listItem.setAttribute('data-index',index.toString());
